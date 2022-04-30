@@ -15,7 +15,7 @@ def create_user(user: schemas.UserCreate, db: Session = Depends(get_db)):
 
     new_user = models.User(**user.dict())  # unpack every variable in post class
     db.add(new_user)
-    db.commit()
+    db.commit()  # test
     db.refresh(new_user)  # update the variable in python
 
     return new_user
